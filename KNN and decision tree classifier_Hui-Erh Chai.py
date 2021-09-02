@@ -19,18 +19,6 @@ y = df.iloc[:, -1].values
 #y = y.map({'True':0, 'False':1})
 
 
-# Import label encoder
-#from sklearn.preprocessing import OneHotEncoder
-#enc = OneHotEncoder()
-#y = [['True', 0], ['False', 1]]
-#enc.fit(y)
-# Encode labels in column 'squeeze'.
-#y = enc.fit_transform(y)
-#print(y)
-
-
-
-
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.3, random_state=1, stratify=y)
 
@@ -70,19 +58,6 @@ print(confusion_matrix(y_test,y_pred))
 print(classification_report(y_test,y_pred))
 
 
-# visulize data
-#import matplotlib.pyplot as plt
-#import pandas as pd
-#from mlxtend.plotting import plot_decision_regions
-# Plotting decision region
-#plot_decision_regions(X_test, y_test, knn, legend=2)
- #Adding axes annotations
-#plt.xlabel('X')
-#plt.ylabel('Y')
-#plt.title('Knn with K='+ str(k))
-#plt.show()
-
-
 # Decision Tree Classifier
 from sklearn.tree import DecisionTreeClassifier
 #import numpy as np
@@ -99,27 +74,3 @@ print(classification_report(y_test,pred))
 print("My name is Hui-Erh Chai_Angela")
 print("My NetID is: 674939884")
 print("I hereby certify that I have read the University policy on Academic Integrity and that I am not in violation.")
-
-
-#X_combined = np.vstack((X_train, X_test))
-#y_combined = np.vstack((y_train, y_test))
-#plot_decision_regions(X_combined, y_combined, classifier=tree, test_idx=(105,150))
-#plt.xlabel('sepal length (cm) [standardized]')
-#plt.ylabel('petal width [standardized]')
-#plt.legend(loc='upper left')
-#plt.show()
-
-#from pydotplus import graph_from_dot_data
-#from sklearn.tree import export_graphviz
-#dot_data = export_graphviz(tree, filled=True, rounded=True, class_names=['squeeze', 'non_squeeze'],
-#                           feature_names=['price_crossing', 'price_distortion', 'roll_start', 'roll_heart', 'near_minus_next', 'ctd_last_first', 'ctd1_percent', 'delivery_cost', 'delivery_ratio'],
-#                           out_file=None)
-#graph = graph_from_dot_data(dot_data)
-#graph.write_png('tree.png')
-
-
-
-
-
-
-
